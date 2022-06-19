@@ -132,6 +132,10 @@ const VehicleEntry = () => {
     const getParkingSlot = (vehicleType, entrypoint) => {
        const entry = data?.find(entry => entry.id === entrypoint);
        const availableSlots = entry.slots.filter((slot) => slot.isAvailable)
+       console.log("avLslots:", availableSlots[0].type + " " + vehicleType);
+       const newAvailSlot = availableSlots.find(vTyp => vTyp.type === vehicleType);
+       console.log("avLslots find:", newAvailSlot);
+       // check if vehicle type match the slot (MP, LP)
 
        if (!availableSlots.length) {
         alert('no slots avaiable');
@@ -233,9 +237,9 @@ const VehicleEntry = () => {
                 {
                     entrypoint?.slots.map((slot, index) => (
                         
-                        <Box onClick={() => handleExit(slot.slotId)} key={index} sx={{ cursor: "pointer", width: '4rem', height: '4rem',  display: "flex", alignItems: "center", justifyContent: 'center', m: 1, backgroundColor: slot.isAvailable ? "green" : "red"  }}>
+                        <Box onClick={() => handleExit(slot.slotId)} key={index} sx={{ p: "0.5rem", cursor: "pointer", width: '5rem', height: '4rem',  display: "flex", alignItems: "center", justifyContent: 'center', m: 1, backgroundColor: slot.isAvailable ? "green" : "red"  }}>
                           <Stack>
-                            <Typography>{slot.slotId}</Typography>
+                            <Typography >SLOT# {slot.slotId}</Typography>
                             <Typography>{slot.type}</Typography>
                           </Stack>
                         </Box>
