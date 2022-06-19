@@ -132,7 +132,6 @@ const VehicleEntry = () => {
     const getParkingSlot = (vehicleType, entrypoint) => {
        const entry = data?.find(entry => entry.id === entrypoint);
        const availableSlots = entry.slots.filter((slot) => slot.isAvailable)
-       console.log("avLslots:", availableSlots[0].type + " " + vehicleType);
        const newAvailSlot = availableSlots.find(vTyp => vTyp.type === vehicleType);
        console.log("avLslots find:", newAvailSlot);
        // check if vehicle type match the slot (MP, LP)
