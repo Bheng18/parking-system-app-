@@ -186,7 +186,7 @@ const VehicleEntry = () => {
                     <input
                         {...register("carType", { required: true })}
                         type="radio"
-                        value="small"
+                        value="SP"
                         id="small-car"
                     />
                     SMALL
@@ -197,7 +197,7 @@ const VehicleEntry = () => {
                     <input
                         {...register("carType")}
                         type="radio"
-                        value="medium"
+                        value="MP"
                         id="medium-car"
                         />
                     MEDIUM
@@ -209,7 +209,7 @@ const VehicleEntry = () => {
                     <input
                         {...register("carType")}
                         type="radio"
-                        value="large"
+                        value="LP"
                         id="large-car"
                         />
                     LARGE
