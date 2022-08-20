@@ -1,5 +1,5 @@
 import "./App.css";
-import VehicleEntry from "./screens/vehicle-entry/VehicleEntry";
+import VehicleEntry from "./screens/vehicle-entry";
 
 function App() {
   return (
